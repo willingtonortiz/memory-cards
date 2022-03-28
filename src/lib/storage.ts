@@ -50,7 +50,10 @@ const createCards = () => {
 		});
 	};
 
-	const deleteAll = () => set([]);
+	const deleteAll = () => {
+		setLocalStorage(CARDS_KEY, JSON.stringify([]));
+		set([]);
+	};
 
 	return { subscribe, addCard, removeCard, deleteAll };
 };
